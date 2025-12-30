@@ -1,1 +1,17 @@
-<h2>{{ name }}</h2>
+<section id="tasks">
+<header>
+    <h2>{{ name }}'s Tasks</h2>
+    <menu>Add Task</menu>
+</header>
+
+
+<ul>
+    @for (task of selestedUserTasks; track task.id) {
+   <li>
+      <app-task [task]="task" (complete)="omCompleteTask($event)" />
+    </li>
+    }
+</ul>
+</section>
+
+

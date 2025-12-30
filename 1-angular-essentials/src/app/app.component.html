@@ -5,22 +5,21 @@
     <!-- @for (user of users; track user.id) { -->
     <li *ngFor="let user of users">
       <app-user
-        [user] ="user"
+      [user] ="user"
+      [selected]="user.id === selectedUserId"
       (select)="onSelectUser($event)"
       />
     </li>
     <!-- } -->
   </ul>
 
-    <!-- @if (selectedUser) { -->
-      <app-tasks  *ngIf="selectedUser; else fallback" [name]="selectedUser!.name" />
-    <!-- } @else { -->
+     @if (selectedUser) { 
+      <app-tasks  [userId]="selectedUser.id" [name]="selectedUser!.name" />
+    } @else { 
       <ng-template #fallback>
   <p id="fallback">
       Selecte a user to see their tasks!
      </p>
       </ng-template>
-      
-   
-    <!-- } -->
+     } 
 </main>
