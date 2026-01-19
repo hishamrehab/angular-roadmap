@@ -6,7 +6,7 @@ export interface InvestmentInput {
   }
 
 
-//   type InvestmentInput = {
+//  export type InvestmentInput = {
 //     initialInvestment: number ,
 //     duration : number , 
 //     expectedReturn :number,
